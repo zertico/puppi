@@ -4,8 +4,9 @@ gem 'mail'
 
 group :test do
   gem 'autotest'
-  gem 'rspec-core'
+  gem 'rspec'
   gem 'fakefs'
+  gem 'simplecov'
 end
 
 # Specify your gem's dependencies in puppi-ruby.gemspec

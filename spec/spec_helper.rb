@@ -1,7 +1,10 @@
 require 'fakefs/spec_helpers'
 require 'mail'
 require 'simplecov'
-SimpleCov.start
+
+SimpleCov.start do
+  add_filter('/vendor\/ruby/')
+end
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
