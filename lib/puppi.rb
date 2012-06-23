@@ -12,7 +12,11 @@ module Puppi
   require 'puppi/version'
   require 'yaml'
   
-  @@puppidir = "/etc/puppi"
+  if ENV["RUN_ENV"] == "TEST"
+    @@puppidir = File.dirname(File.dirname(__FILE__))+"/tmp/config"
+  else
+    @@puppidir = "/etc/puppi"
+  end
   
   class << self
     def puppidir
