@@ -23,7 +23,8 @@ module Puppi
 name: openssh
 version: 1.0'
       write_file '/data/standard_hostname.yml', '--- 
-name: hostname'
+name: hostname
+version: 0.1'
     end
     
     def notifications

@@ -37,7 +37,8 @@ version: 1.0'
   it "should the standard datafile for hostname module" do
     standard_helper = File.open(Puppi::puppidir+'/data/standard_hostname.yml', 'rb') { |file| file.read }
     standard_helper.should eql '--- 
-name: hostname'
+name: hostname
+version: 0.1'
   end
   
   it "should generate the standard notification to user1@mail.com for mail method" do

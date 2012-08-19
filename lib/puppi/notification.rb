@@ -33,8 +33,11 @@ module Puppi
     
     private
     def valid_method? (method)
-      @valid_methods = Puppi::Notifications.constants.select {|c| Class === Puppi::Notifications.const_get(c)}
-      @valid_methods.include? method.capitalize.to_sym
+      @valid_methods = Array.new
+      Puppi::Notifications.constants.each do |valid_method|
+        @valid_methods << valid_method.to_s
+      end
+      @valid_methods.include? method.capitalize
     end
   end
 end

@@ -35,16 +35,21 @@ module Puppi
     private
     def run_command command, module_helper
       @running_command = prepare_command command.command
-      output = IO.popen(@running_command, :err => [:child, :out]) unless @running_command.nil?
+      output = IO.popen(@running_command) unless @running_command.nil?
       output.nil? ? nil : output.read
     end
     
     def prepare_command command
       begin
-        command % @loaded_datafile.variables
-      rescue KeyError
-        nil
-      end 
+        @loaded_datafile.variables.each do |index, value|
+          command.gsub!("%{"+index.to_s+"}", value.to_s)
+        end
+        raise StandardError unless command.match(/%\{[a-z]*\}/).nil?
+        command
+      rescue
+        puts "Malformed Datafile"
+        exit 1
+      end
     end
   end
 end

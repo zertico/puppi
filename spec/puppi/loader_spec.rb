@@ -48,7 +48,7 @@ describe "Puppi::Loader" do
     it "should load all hostname standard data file" do
       @p = @loader.load_datafile('standard_hostname')
       @p.should be_a(Puppi::Files::Datafile)
-      @p.variables.should have(1).items
+      @p.variables.should have(2).items
     end
   
     it "should raise an exception for a invalid data file" do

@@ -11,16 +11,23 @@ module Puppi
   require 'puppi/notifications/stdout'
   require 'puppi/version'
   require 'yaml'
+  require 'pry'
   
   if ENV["RUN_ENV"] == "TEST"
     @@puppidir = File.dirname(File.dirname(__FILE__))+"/tmp/config"
+    @@stdout_print = false
   else
     @@puppidir = "/etc/puppi"
+    @@stdout_print = true
   end
   
   class << self
     def puppidir
       @@puppidir
+    end
+    
+    def stdout_print
+      @@stdout_print
     end
     
     def initial_checks

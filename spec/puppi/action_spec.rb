@@ -44,13 +44,13 @@ describe "Puppi::Action" do
     output.should include("+ openssh +\n")
   end
   
+  subject { Puppi::Action.new({:action => 'check', :puppi_module => nil}).output }
   it "should return all command output when running check command" do
-    output = Puppi::Action.new({:action => 'check', :puppi_module => nil}).output
-    output.should be_an(Array)
-    output.should have(4).items
-    output.should include("| hostname |\n")
-    output.should include(nil)
-    output.should include("| openssh |\n")
-    output.should include("| 1.0 |\n")
+    should be_an(Array)
+    should have(4).items
+    should include("| hostname |\n")
+    should include("| 0.1 |\n")
+    should include("| openssh |\n")
+    should include("| 1.0 |\n")
   end
 end

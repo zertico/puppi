@@ -5,7 +5,7 @@ module Puppi
       end
       
       def output(output)
-        puts output
+        puts output if Puppi::stdout_print
       end
     end
   end
