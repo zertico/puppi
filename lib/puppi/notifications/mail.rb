@@ -12,7 +12,7 @@ module Puppi
         mails = load_all
         mails.each do |mail|
           mailer = @loader.load_notification(mail)
-          send_mail (mailer) if valid_mailer? (mailer)
+          send_mail (mailer) if valid_mailer?(mailer)
         end
       end
       
