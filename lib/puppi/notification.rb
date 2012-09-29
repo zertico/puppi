@@ -1,11 +1,11 @@
 module Puppi
   class Notification
-    
+
     attr_reader :notify_methods
-    
+
     def initialize(notifications, output)
       @notify_methods = Array.new
-      
+
       if notifications.empty?
         notifier = Puppi::Notifications::Stdout.new
         notifier.output(output)
@@ -22,7 +22,7 @@ module Puppi
         end
       end
     end
-    
+
     def validate_notifications_methods (notifications)
       notifications.each do |notification|
         if !valid_method? notification
@@ -30,7 +30,7 @@ module Puppi
         end
       end
     end
-    
+
     private
     def valid_method? (method)
       @valid_methods = Array.new
