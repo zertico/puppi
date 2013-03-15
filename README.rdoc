@@ -1,7 +1,6 @@
 = Puppi on Ruby - Experimental version of Puppi in Ruby
 
-{<img src="https://badge.fury.io/rb/puppi.png" alt="Gem Version" />}[http://badge.fury.io/rb/puppi] {<img src="https://secure.travis-ci.org/zertico/puppi.png" />}[http://travis-ci.org/zertico/puppi] {<img src="https://gemnasium.com/zertico/puppi.png" alt="Dependency Status" />}[https://gemnasium.com/zertico/puppi] {<img src="https://coveralls.io/repos/zertico/puppi/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/zertico/puppi]
- {<img src="https://codeclimate.com/github/zertico/puppi.png" />}[https://codeclimate.com/github/zertico/puppi]
+{<img src="https://badge.fury.io/rb/puppi.png" alt="Gem Version" />}[http://badge.fury.io/rb/puppi] {<img src="https://secure.travis-ci.org/zertico/puppi.png" />}[http://travis-ci.org/zertico/puppi] {<img src="https://gemnasium.com/zertico/puppi.png" alt="Dependency Status" />}[https://gemnasium.com/zertico/puppi] {<img src="https://coveralls.io/repos/zertico/puppi/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/zertico/puppi] {<img src="https://codeclimate.com/github/zertico/puppi.png" />}[https://codeclimate.com/github/zertico/puppi]
 
 It's supposed to replace the existing puppi command written in bash.
 
