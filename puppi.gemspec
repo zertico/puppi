@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.email       = ["fernandes@zertico.com"]
   s.summary     = %q{Puppet module to manage applications deployments and servers local management}
   s.description = <<-EOF
-Puppi is a Puppet module that lets sysadmins standardize, manage and automate the deployment of web applications 
+Puppi is a Puppet module that lets sysadmins standardize, manage and automate the deployment of web applications
 and provides quick and standard commands to obtain informations about the system and what’s is going on it.
 
-Its structure provides FULL flexibility on the actions required for virtually any kind of application deployment 
+Its structure provides FULL flexibility on the actions required for virtually any kind of application deployment
 and information gathering.
 EOF
 
@@ -23,9 +23,9 @@ EOF
 
   s.add_runtime_dependency "rake"
   s.add_runtime_dependency "mail"
-  
+
   s.add_development_dependency "autotest"
   s.add_development_dependency "rspec"
   s.add_development_dependency "fakefs"
-  s.add_development_dependency "simplecov"
+  s.add_development_dependency "coveralls"
 end
