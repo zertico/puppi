@@ -52,7 +52,7 @@ describe "Puppi::Loader" do
     end
   
     it "should raise an exception for a invalid data file" do
-      expect { @loader.load_datafile('invalid_datafile') }.to raise_error("Invalid Datafile")
+      expect { @loader.load_datafile('invalid_datafile') }.to raise_error Puppi::Exceptions::InvalidDatafile
     end
   end
 
@@ -81,7 +81,7 @@ describe "Puppi::Loader" do
     end
   
     it "should raise an exception for a invalid notification file" do
-      expect { @loader.load_notification('notification_invalid') }.to raise_error("Invalid Notification")
+      expect { @loader.load_notification('notification_invalid') }.to raise_error Puppi::Exceptions::InvalidNotification
     end
   end
 end

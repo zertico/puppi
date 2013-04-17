@@ -25,8 +25,8 @@ module Puppi
 
     def validate_notifications_methods (notifications)
       notifications.each do |notification|
-        if !valid_method? notification
-          raise "unknown notification method"
+        unless valid_method? notification
+          raise Exceptions::InvalidNotification
         end
       end
     end

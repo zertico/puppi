@@ -4,7 +4,7 @@ module Puppi
     
     def initialize (options)
       @loader = Puppi::Loader.new
-      @actions = [ 'check', 'log', 'info' ]
+      @actions = %w(check log info)
       if options[:puppi_module].nil?
         @puppi_module = nil
       else
@@ -13,7 +13,7 @@ module Puppi
       if @actions.include? options[:action].to_s
         execute options[:action].to_s
       else
-        raise "No Action Found"
+        raise Exceptions::ActionNotFound
       end
     end
     
@@ -33,6 +33,7 @@ module Puppi
     end
     
     private
+
     def run_command command, module_helper
       @running_command = prepare_command command.command
       output = IO.popen(@running_command) unless @running_command.nil?
@@ -44,7 +45,7 @@ module Puppi
         @loaded_datafile.variables.each do |index, value|
           command.gsub!("%{"+index.to_s+"}", value.to_s)
         end
-        raise StandardError unless command.match(/%\{[a-z]*\}/).nil?
+        raise Exceptions::WrongCommand unless command.match(/%\{[a-z]*\}/).nil?
         command
       rescue
         puts "Malformed Datafile"

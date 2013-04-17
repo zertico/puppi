@@ -39,8 +39,9 @@ subject: \'[puppi] notification\''
     end
     
     private
+
     def write_file file, string
-      File.open(Puppi::puppidir+file, 'w') {|f| f.write(string) }
+      File.open("#{Puppi::puppidir}#{file}", 'w') {|f| f.write(string) }
     end
   end
 end
