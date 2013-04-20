@@ -1,8 +1,6 @@
 require "spec_helper"
-require 'puppi'
-require 'fileutils'
 
-describe "Puppi::GenerateSampleData" do
+describe Puppi::GenerateSampleData do
   
   before(:each) do
     Puppi::initial_checks

@@ -1,7 +1,6 @@
 require "spec_helper"
-require 'puppi'
 
-describe "Puppi::Action" do
+describe Puppi::Action do
   
   before(:each) do
     Puppi::initial_checks

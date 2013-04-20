@@ -1,5 +1,4 @@
 require "spec_helper"
-require 'puppi'
 
 describe Puppi do
   context "initial checks" do

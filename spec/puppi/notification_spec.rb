@@ -1,7 +1,6 @@
 require "spec_helper"
-require 'puppi'
 
-describe "Puppi::Notification" do
+describe Puppi::Notification do
   
   before(:each) do
     @loader = Puppi::Loader.new
