@@ -4,9 +4,9 @@ describe Puppi::GenerateSampleData do
   
   before(:each) do
     Puppi::initial_checks
-    Puppi::GenerateSampleData.new.helpers
-    Puppi::GenerateSampleData.new.datafiles
-    Puppi::GenerateSampleData.new.notifications
+    Puppi::GenerateSampleData.helpers
+    Puppi::GenerateSampleData.datafiles
+    Puppi::GenerateSampleData.notifications
   end
 
   it "should the standard helper" do
