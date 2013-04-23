@@ -1,12 +1,11 @@
 require "spec_helper"
-require 'puppi'
 
-describe "Puppi" do
+describe Puppi do
   context "initial checks" do
     it "should provide puppidir path" do
-      puppidir = Puppi::puppidir.should match(/(\/.+)+/)
+      Puppi::puppidir.should == "/etc/puppi"
     end
-  
+
     it "should create puppi data directory if it does not exists" do
       File.exists?(Puppi::puppidir+'/data').should be_false
       Puppi::initial_checks

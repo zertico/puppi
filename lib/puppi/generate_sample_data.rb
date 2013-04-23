@@ -1,9 +1,6 @@
 module Puppi
-  class GenerateSampleData
-    def initialize
-    end
-    
-    def helpers
+  module GenerateSampleData
+    def self.helpers
       write_file '/helpers/standard.yml', '--- 
 :info: 
   -
@@ -18,7 +15,7 @@ module Puppi
     :description: "check module version"'
     end
     
-    def datafiles
+    def self.datafiles
       write_file '/data/standard_openssh.yml', '--- 
 name: openssh
 version: 1.0'
@@ -27,7 +24,7 @@ name: hostname
 version: 0.1'
     end
     
-    def notifications
+    def self.notifications
       write_file '/notifications/mail_user1.yml', '--- 
 from: puppi@puppi.com
 to: user1@mail.com
@@ -39,8 +36,9 @@ subject: \'[puppi] notification\''
     end
     
     private
-    def write_file file, string
-      File.open(Puppi::puppidir+file, 'w') {|f| f.write(string) }
+
+    def self.write_file(file, string)
+      File.open("#{Puppi::puppidir}#{file}", 'w') {|f| f.write(string) }
     end
   end
 end

@@ -1,14 +1,13 @@
 require "spec_helper"
-require 'puppi'
 
-describe "Puppi::Notification" do
+describe Puppi::Notification do
   
   before(:each) do
     @loader = Puppi::Loader.new
   end
 
   it "should show raise exception when a unknown method is specified" do
-    expect { Puppi::Notification.new(['unknown'], 'output') }.to raise_error(RuntimeError)
+    expect { Puppi::Notification.new(['unknown'], 'output') }.to raise_error Puppi::Exceptions::InvalidNotification
   end
   
   it "should use stdout notification method when no one is specified" do

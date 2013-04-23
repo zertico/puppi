@@ -17,6 +17,7 @@ module Puppi
       end
       
       private
+
       def send_mail (mail)
         mail = ::Mail.new do
                   from    mail.variables[:from]
@@ -28,12 +29,12 @@ module Puppi
       end
       
       def valid_mailer? (mailer)
-        return false if mailer.class != Puppi::Files::Notification
+        return false unless mailer.class == Puppi::Files::Notification
         required_fields = %w[ from to subject ]
         required_fields.each do |required_field|
           return false unless mailer.variables.has_key? required_field.to_sym
         end
-        return true
+        true
       end
       
       def load_all
@@ -42,4 +43,3 @@ module Puppi
     end
   end
 end
-    

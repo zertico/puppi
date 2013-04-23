@@ -1,7 +1,6 @@
 require "spec_helper"
-require 'puppi'
 
-describe "Puppi::Loader" do
+describe Puppi::Loader do
   
   before(:each) do
     @loader = Puppi::Loader.new
@@ -10,7 +9,7 @@ describe "Puppi::Loader" do
   context "loading helpers" do
      before(:each) do
        Puppi::initial_checks
-       Puppi::GenerateSampleData.new.helpers
+       Puppi::GenerateSampleData.helpers
      end
    
      it "should load all helpers files" do
@@ -24,7 +23,7 @@ describe "Puppi::Loader" do
   context "loading data files" do
     before(:each) do
      Puppi::initial_checks
-     Puppi::GenerateSampleData.new.datafiles
+     Puppi::GenerateSampleData.datafiles
     end
 
     it "should load all data files" do
@@ -52,14 +51,14 @@ describe "Puppi::Loader" do
     end
   
     it "should raise an exception for a invalid data file" do
-      expect { @loader.load_datafile('invalid_datafile') }.to raise_error("Invalid Datafile")
+      expect { @loader.load_datafile('invalid_datafile') }.to raise_error Puppi::Exceptions::InvalidDatafile
     end
   end
 
   context "loading notification files" do
     before(:each) do
      Puppi::initial_checks
-     Puppi::GenerateSampleData.new.notifications
+     Puppi::GenerateSampleData.notifications
     end
 
     it "should load all notification files" do
@@ -81,7 +80,7 @@ describe "Puppi::Loader" do
     end
   
     it "should raise an exception for a invalid notification file" do
-      expect { @loader.load_notification('notification_invalid') }.to raise_error("Invalid Notification")
+      expect { @loader.load_notification('notification_invalid') }.to raise_error Puppi::Exceptions::InvalidNotification
     end
   end
 end
