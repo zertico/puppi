@@ -3,7 +3,6 @@ require 'yaml'
 module Puppi
   autoload :Files, 'puppi/files'
   autoload :Action, 'puppi/action'
-  autoload :GenerateSampleData, 'puppi/generate_sample_data'
   autoload :Loader, 'puppi/loader'
   autoload :Notification, 'puppi/notification'
   autoload :Notifications, 'puppi/notifications'

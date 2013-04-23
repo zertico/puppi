@@ -4,8 +4,8 @@ describe Puppi::Action do
   
   before(:each) do
     Puppi::initial_checks
-    Puppi::GenerateSampleData.helpers
-    Puppi::GenerateSampleData.datafiles
+    Generate.helpers
+    Generate.datafiles
   end
         
   it "should respond to check action" do

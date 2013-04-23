@@ -4,6 +4,7 @@ require 'coveralls'
 
 Coveralls.wear!
 
+require "generate"
 require "#{File.dirname(__FILE__)}/../lib/puppi"
 
 Mail.defaults do

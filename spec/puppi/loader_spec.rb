@@ -9,7 +9,7 @@ describe Puppi::Loader do
   context "loading helpers" do
      before(:each) do
        Puppi::initial_checks
-       Puppi::GenerateSampleData.helpers
+       Generate.helpers
      end
    
      it "should load all helpers files" do
@@ -23,7 +23,7 @@ describe Puppi::Loader do
   context "loading data files" do
     before(:each) do
      Puppi::initial_checks
-     Puppi::GenerateSampleData.datafiles
+     Generate.datafiles
     end
 
     it "should load all data files" do
@@ -58,7 +58,7 @@ describe Puppi::Loader do
   context "loading notification files" do
     before(:each) do
      Puppi::initial_checks
-     Puppi::GenerateSampleData.notifications
+     Generate.notifications
     end
 
     it "should load all notification files" do
