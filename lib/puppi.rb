@@ -13,10 +13,6 @@ module Puppi
     "/etc/puppi"
   end
 
-  def self.stdout_print
-    true
-  end
-
   def self.initial_checks
     directories = %w[ data helpers notifications ]
     directories.each do |directory|
