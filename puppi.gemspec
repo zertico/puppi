@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = "puppi"
   s.version     = Puppi::VERSION
   s.authors     = ["Celso Fernandes"]
-  s.email       = ["fernandes@zertico.com"]
+  s.email       = %w(fernandes@zertico.com)
   s.summary     = %q{Puppet module to manage applications deployments and servers local management}
   s.description = <<-EOF
 Puppi is a Puppet module that lets sysadmins standardize, manage and automate the deployment of web applications
@@ -19,7 +19,7 @@ EOF
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  s.require_paths = ["lib"]
+  s.require_paths = %w(lib)
 
   s.add_runtime_dependency "rake"
   s.add_runtime_dependency "mail"

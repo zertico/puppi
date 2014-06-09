@@ -1,18 +1,14 @@
 require "spec_helper"
-require 'puppi'
 
-# ar = {:action => 'info', :puppi_module => 'hostname', :notification => ['mail', 'mq']}
-
-describe "Puppi::Action" do
+describe Puppi::Action do
   
   before(:each) do
     Puppi::initial_checks
-    Puppi::GenerateSampleData.new.helpers
-    Puppi::GenerateSampleData.new.datafiles
+    Generate.helpers
+    Generate.datafiles
   end
         
   it "should respond to check action" do
-    ar = {:action => 'check', :puppi_module => nil}
     Puppi::Action.new({:action => 'check', :puppi_module => nil}).should respond_to(:execute).with(1).argument
   end
   
@@ -25,7 +21,7 @@ describe "Puppi::Action" do
   end
   
   it "should not respond to an unknown action" do
-    expect { Puppi::Action.new({:action => :unknow_action, :puppi_module => nil}) }.to raise_error "No Action Found"
+    expect { Puppi::Action.new({:action => :unknow_action, :puppi_module => nil}) }.to raise_error Puppi::Exceptions::ActionNotFound
   end
   
   it "should return module name if puppi module is specified" do
